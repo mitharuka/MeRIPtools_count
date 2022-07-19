@@ -128,7 +128,7 @@ countReads<-function(
     mapping$chr = as.character(dna.range$seqnames)
     mapping$strand = as.character(dna.range$strand)
     rownames(mapping) = paste(geneName,slidingStart,sep = ",")
-    #geneRNA2DNA= rbind(geneRNA2DNA,mapping[c("chr","start","end","strand")])
+    geneRNA2DNA= rbind(geneRNA2DNA,mapping[c("chr","start","end","strand")])
 
     #count reads in all samples
     ba.IP = sapply(bamPath.IP,.countReadFromBam,which = range(geneModel),reads.strand = reads.strand,DNA2RNA = DNA2RNA,fragmentLength=fragmentLength,left=dna.range$start,sliding = slidingStart, binSize = binSize, paired = paired)
