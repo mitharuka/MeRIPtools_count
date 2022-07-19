@@ -124,7 +124,7 @@ countReads<-function(
       }
     }
       
-    mapping <- data.frame()
+   
     mapping$chr = as.character(dna.range$seqnames)
     mapping$strand = as.character(dna.range$strand)
     rownames(mapping) = paste(geneName,slidingStart,sep = ",")
